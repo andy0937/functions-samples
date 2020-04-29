@@ -99,11 +99,11 @@ exports.token = functions.https.onRequest(async (req, res) => {
       });
       console.log('Auth code exchange result received:', results);
 
-      // We have an Instagram access token and the user identity now.
-      const accessToken = results.access_token;
-      const instagramUserID = results.user.id;
-      const profilePic = results.user.profile_picture;
-      const userName = results.user.full_name;
+        // We have an Instagram access token and the user identity now.
+        const accessToken = results.access_token;
+        const instagramUserID = results.user.id;
+        const profilePic = results.user.profile_picture;
+        const userName = results.user.full_name;
 
       // Create a Firebase account and get the Custom Auth Token.
       const firebaseToken = await createFirebaseAccount(instagramUserID, userName, profilePic, accessToken);
